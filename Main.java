@@ -18,7 +18,16 @@ public class Main {
             int col = sc.nextInt();
 
             board.placePiece(row, col);
+
+            board.checkCols();
+
             board.printBoard();
+
+            if (board.checkCols() || board.checkRows() || board.checkDiags()) {
+                winner = true;
+            }
         }
+
+
     }
 }
