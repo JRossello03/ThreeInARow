@@ -29,14 +29,16 @@ public class Board {
     }
 
     public void placePiece(int row, int col) {
-        if (!this.board[row][col].isOcupated()) {
-            this.board[row][col].setOcupated(true);
-            this.board[row][col].setPiece("❌");
+        if (!board[row][col].isOcupated()) {
+            board[row][col].setOcupated(true);
+            board[row][col].setPiece("❌");
         }
     }
 
-    /*public boolean checkCol() {
-        return this.board[row][0].isOcupated() || this.board[row][1].isOcupated() || this.board[row][2].isOcupated();
+    // Check if there's a winner
+    /*public void checkCol() {
+        if (this.board[row][0].isOcupated() || this.board[row][1].isOcupated() || this.board[row][2].isOcupated()){
+            System.out.println("There's Winner!");
+        }
     }*/
-
 }
