@@ -5,8 +5,10 @@ public class Board {
     private static final int row = 3;
     private static final int col = 3;
     private final Cell[][] board = new Cell[row][col];
+    private Turn turn;
 
     public Board() {
+        this.turn = new Turn();
         initializeBoard();
         printBoard();
     }
@@ -30,8 +32,15 @@ public class Board {
 
     public void placePiece(int row, int col) {
         if (!board[row][col].isOcupated()) {
-            board[row][col].setOcupated(true);
-            board[row][col].setPiece("❌");
+            if (this.turn.getTurn() == 1) {
+                board[row][col].setPiece("❌");
+                board[row][col].setOcupated(true);
+                this.turn.setTurn(2);
+            } else {
+                board[row][col].setPiece("⭕");
+                board[row][col].setOcupated(true);
+                this.turn.setTurn(1);
+            }
         }
     }
 

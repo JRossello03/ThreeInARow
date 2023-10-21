@@ -11,15 +11,16 @@ public class Main {
 
         Board board = new Board();
 
+
         // I would like to add a try/catch to handle errors
-        while(!winner) {
+        while (!winner) {
+
             System.out.println("Choose position to place a piece: ");
+
             int row = sc.nextInt();
             int col = sc.nextInt();
 
-            board.placePiece(row, col);
-
-            board.checkCols();
+           board.placePiece(row, col);
 
             board.printBoard();
 
@@ -27,7 +28,5 @@ public class Main {
                 winner = true;
             }
         }
-
-
     }
 }

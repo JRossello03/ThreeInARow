@@ -12,7 +12,6 @@ public class Cell {
     }
 
 
-
     // GETTERS AND SETTERS
     public boolean isOcupated() {
         return this.ocupated;
