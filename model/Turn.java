@@ -5,7 +5,7 @@ public class Turn {
     private int turn;
 
     public Turn() {
-        this.turn = 1;
+        this.turn = 2;
     }
 
     public int getTurn() {

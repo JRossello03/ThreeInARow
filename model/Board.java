@@ -30,40 +30,9 @@ public class Board {
         }
     }
 
-    public void placePiece(int row, int col) {
-        if (!board[row][col].isOcupated()) {
-            if (this.turn.getTurn() == 1) {
-                board[row][col].setPiece("❌");
-                board[row][col].setOcupated(true);
-                this.turn.setTurn(2);
-            } else {
-                board[row][col].setPiece("⭕");
-                board[row][col].setOcupated(true);
-                this.turn.setTurn(1);
-            }
-        }
+    public Cell[][] getBoard() {
+        return board;
     }
 
-    // Check if there's a winner
-    public boolean checkCols() {
-        if (board[0][0].isOcupated() && board[1][0].isOcupated() && board[2][0].isOcupated()) {
-            return true;
-        } else if (board[0][1].isOcupated() && board[1][1].isOcupated() && board[2][1].isOcupated()) {
-            return true;
-        } else return board[2][2].isOcupated() && board[1][2].isOcupated() && board[0][2].isOcupated();
-    }
 
-    public boolean checkRows() {
-        if (board[0][0].isOcupated() && board[0][1].isOcupated() && board[0][2].isOcupated()) {
-            return true;
-        } else if (board[1][0].isOcupated() && board[1][1].isOcupated() && board[1][2].isOcupated()) {
-            return true;
-        } else return board[2][0].isOcupated() && board[2][1].isOcupated() && board[2][2].isOcupated();
-    }
-
-    public boolean checkDiags() {
-        if (board[0][0].isOcupated() && board[1][1].isOcupated() && board[2][2].isOcupated()) {
-            return true;
-        } else return board[0][2].isOcupated() && board[1][1].isOcupated() && board[2][0].isOcupated();
-     }
 }
